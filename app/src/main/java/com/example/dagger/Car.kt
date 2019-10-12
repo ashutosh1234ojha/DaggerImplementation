@@ -8,33 +8,17 @@ import javax.inject.Inject
  */
 
 //Constructor inject
-class Car @Inject constructor(engine: Engine) {
+class Car @Inject constructor(engine: Engine, wheels: Wheels) {
 
-  lateinit  var remote:Remote
-    //Field inject
-    @Inject
-    lateinit var wheels: Wheels;
 
     companion object {
         private val TAG = "Car"
 
     }
 
-//    //Method inject
-//    @Inject
-//    fun enableRemote(remote: Remote) {
-//        remote.setListener(this)
-//    }
-
-    //Method inject
-    @Inject
-    fun setRemoteVar(remote: Remote) {
-        this.remote=remote
-    }
 
     fun drive() {
 
-        remote.setListener(this)
         Log.d(TAG, "driving by field injection...")
 
     }
