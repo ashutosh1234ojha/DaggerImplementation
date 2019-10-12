@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import com.example.dagger.di.DaggerCarComponent
 import javax.inject.Inject
 
+
 class MainConceptActivity : AppCompatActivity() {
 
     @Inject
