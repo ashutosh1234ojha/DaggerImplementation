@@ -11,7 +11,7 @@ class Car @Inject constructor(var wheels: Wheels, engine: Engine) {
 
     fun drive() {
 
-        Log.d(TAG,"driving...¬")
+        Log.d(TAG,"driving by field injection...")
 
     }
 
