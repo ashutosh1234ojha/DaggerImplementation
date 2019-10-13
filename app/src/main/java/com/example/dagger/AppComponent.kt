@@ -8,5 +8,5 @@ import javax.inject.Singleton
 @Component(modules = arrayOf(DriverModule::class))
 interface AppComponent {
 
-    fun getActivityComponent(diesellEngineModule: DiesellEngineModule):ActivityComponent
+    fun getActivityComponentBuilder():ActivityComponent.Builder
 }

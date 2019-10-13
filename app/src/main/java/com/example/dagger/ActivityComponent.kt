@@ -10,24 +10,22 @@ import javax.inject.Named
  * We used @Bind with Diesel and @Provide with Petrol
  */
 @PerActivity
-@Subcomponent(modules = arrayOf(WheelsModule::class, DiesellEngineModule::class))
+@Subcomponent(modules = arrayOf(WheelsModule::class, PetrolEngineModule::class))
 interface ActivityComponent {
 
     fun inject(activity: MainActivity)
 
 
-//    @Component.Builder
-//    interface Builder {
-//
-//        @BindsInstance
-//        fun horsePower(@Named("horsePower") horsePower: Int): Builder
-//
-//        @BindsInstance
-//        fun engineCapacity(@Named("engineCapacity") engineCapacity: Int): Builder
-//
-//        fun appComponent(component: AppComponent):Builder
-//
-//        fun build(): ActivityComponent
-//    }
+    @Subcomponent.Builder
+    interface Builder {
+
+        @BindsInstance
+        fun horsePower(@Named("horsePower") horsePower: Int): Builder
+
+        @BindsInstance
+        fun engineCapacity(@Named("engineCapacity") engineCapacity: Int): Builder
+
+        fun build(): ActivityComponent
+    }
 
 }
