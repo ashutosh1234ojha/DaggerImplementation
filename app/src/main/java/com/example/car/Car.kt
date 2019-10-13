@@ -1,4 +1,4 @@
-package com.example.dagger
+package com.example.car
 
 import android.util.Log
 import javax.inject.Inject
@@ -10,6 +10,7 @@ import javax.inject.Inject
 //Constructor inject
 class Car @Inject constructor(engine: Engine, wheels: Wheels) {
 
+    var engine = engine
 
     companion object {
         private val TAG = "Car"
@@ -18,6 +19,8 @@ class Car @Inject constructor(engine: Engine, wheels: Wheels) {
 
 
     fun drive() {
+
+        engine.start()
 
         Log.d(TAG, "driving by field injection...")
 
