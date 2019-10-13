@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
         val carComponent = DaggerCarComponent
                 .builder()
                 .diesellEngineModule(DiesellEngineModule(10))
-                .wheelsModule()
                 .build()
         carComponent.inject(this)
         car.drive()
