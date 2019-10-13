@@ -6,11 +6,12 @@ import com.example.dagger.WheelsModule
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Named
+import javax.inject.Singleton
 
 /**
  * We used @Bind with Diesel and @Provide with Petrol
  */
-
+@Singleton
 @Component(modules = arrayOf(WheelsModule::class, PetrolEngineModule::class))
 interface CarComponent {
 

@@ -7,10 +7,11 @@ import javax.inject.Inject
  * Here Order will of injection will be 1st Constructor, 2nd Field, 3rd Method
  */
 
-//Constructor inject
-class Car @Inject constructor(engine: Engine, wheels: Wheels) {
+class Car @Inject constructor(driver: Driver, engine: Engine, wheels: Wheels) {
 
     var engine = engine
+    var wheels = wheels
+    var driver = driver
 
     companion object {
         private val TAG = "Car"
@@ -19,10 +20,8 @@ class Car @Inject constructor(engine: Engine, wheels: Wheels) {
 
 
     fun drive() {
-
         engine.start()
-
-        Log.d(TAG, "driving by field injection...")
+        Log.d(TAG, "$driver drives $this")
 
     }
 
