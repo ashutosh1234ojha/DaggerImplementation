@@ -20,10 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val activityComponent =(application as MyApplication).getAppComponent()
-                .getActivityComponentBuilder()
-                .engineCapacity(32)
-                .horsePower(322)
-                .build()
+                .getActivityComponentFactory().create(23,9)
 
         activityComponent.inject(this)
 

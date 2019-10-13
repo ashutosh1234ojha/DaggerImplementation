@@ -2,7 +2,6 @@ package com.example.dagger
 
 import com.example.MainActivity
 import dagger.BindsInstance
-import dagger.Component
 import dagger.Subcomponent
 import javax.inject.Named
 
@@ -16,16 +15,23 @@ interface ActivityComponent {
     fun inject(activity: MainActivity)
 
 
-    @Subcomponent.Builder
-    interface Builder {
+//    @Subcomponent.Builder
+//    interface Builder {
+//
+//        @BindsInstance
+//        fun horsePower(@Named("horsePower") horsePower: Int): Builder
+//
+//        @BindsInstance
+//        fun engineCapacity(@Named("engineCapacity") engineCapacity: Int): Builder
+//
+//        fun build(): ActivityComponent
+//    }
 
-        @BindsInstance
-        fun horsePower(@Named("horsePower") horsePower: Int): Builder
+    @Subcomponent.Factory
+    interface Factory {
 
-        @BindsInstance
-        fun engineCapacity(@Named("engineCapacity") engineCapacity: Int): Builder
-
-        fun build(): ActivityComponent
+        fun create(@BindsInstance @Named("horsePower") horsePower: Int,
+                   @BindsInstance @Named("engineCapacity") engineCapacity: Int): ActivityComponent
     }
 
 }
