@@ -1,12 +1,14 @@
 package com.example.car
 
 import android.util.Log
+import com.example.dagger.PerActivity
 import javax.inject.Inject
 
 /**
  * Here Order will of injection will be 1st Constructor, 2nd Field, 3rd Method
  */
 
+@PerActivity
 class Car @Inject constructor(driver: Driver, engine: Engine, wheels: Wheels) {
 
     var engine = engine

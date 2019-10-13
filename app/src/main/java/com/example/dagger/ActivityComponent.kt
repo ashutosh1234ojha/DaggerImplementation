@@ -1,19 +1,16 @@
-package com.example.di
+package com.example.dagger
 
 import com.example.MainActivity
-import com.example.dagger.PetrolEngineModule
-import com.example.dagger.WheelsModule
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Named
-import javax.inject.Singleton
 
 /**
  * We used @Bind with Diesel and @Provide with Petrol
  */
-@Singleton
-@Component(modules = arrayOf(WheelsModule::class, PetrolEngineModule::class))
-interface CarComponent {
+@PerActivity
+@Component(dependencies = arrayOf(AppComponent::class),modules = arrayOf(WheelsModule::class, PetrolEngineModule::class))
+interface ActivityComponent {
 
     fun inject(activity: MainActivity)
 
@@ -26,7 +23,9 @@ interface CarComponent {
         @BindsInstance
         fun engineCapacity(@Named("engineCapacity") engineCapacity: Int): Builder
 
-        fun build(): CarComponent
+        fun appComponent(component: AppComponent):Builder
+
+        fun build(): ActivityComponent
     }
 
 }
