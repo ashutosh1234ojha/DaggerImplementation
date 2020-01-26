@@ -12,6 +12,6 @@ public class TestActivity  extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
 
-        Log.d("Tag","oncreate1");
+        Log.d("Tag","oncreate");
     }
 }
